@@ -42,9 +42,9 @@ install_php () {
   sudo systemctl restart httpd.service
   echo "Finished"
   # Open Firewall for http/https traffic (also ensure portforwarding is done for port 80)
-  sudo firewall-cmd --permanent --zone=public --add-service=http 
-  sudo firewall-cmd --permanent --zone=public --add-service=https
-  sudo firewall-cmd --reload
+  # sudo firewall-cmd --permanent --zone=public --add-service=http 
+  # sudo firewall-cmd --permanent --zone=public --add-service=https
+  # sudo firewall-cmd --reload
 }
 
 # Create MySQL Database and User for WordPress
@@ -62,7 +62,7 @@ set_up_sql_user () {
 install_wordpress () {
   echo "Install WordPress"
   cd $HOME
-  sudo yum install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y
+  sudo yum install php-curl php-gd -y
   sudo systemctl restart httpd
   wget https://wordpress.org/$tarball
   tar -xzf $tarball
@@ -72,7 +72,7 @@ install_wordpress () {
   sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
   sed -i s/database_name_here/wordpress/ /var/www/html/wp-config.php
   sed -i s/username_here/wordpressuser/ /var/www/html/wp-config.php
-  sed -i s/password_here/root/ /var/www/html/wp-config.php
+  sed -i s/password_here/password/ /var/www/html/wp-config.php
   echo "Finished"
 }
 
