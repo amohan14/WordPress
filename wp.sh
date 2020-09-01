@@ -8,7 +8,6 @@
 password=${1:-root}
 
 # Install and Start Apache Web Server. Setting up the firewall to allow HTTP/HTTPs traffic(Port 80)
-)
 install_apache () {
   echo "Install and Start Apache Web Server"
   cd $HOME
