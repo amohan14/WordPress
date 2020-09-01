@@ -44,7 +44,10 @@ install_mysql () {
 install_php () {
   echo "Install and Start PHP"
   cd $HOME
-  sudo yum install php php-mysql -y
+  sudo yum install epel-release yum-utils -y
+  sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+  sudo yum-config-manager --enable remi-php73 -y
+  sudo yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd -y
   sudo systemctl restart httpd.service
   echo "Finished"
 }
