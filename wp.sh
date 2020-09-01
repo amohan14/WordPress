@@ -12,7 +12,9 @@ install_apache () {
   echo "Install and Start Apache Web Server"
   cd $HOME
   sudo yum install httpd -y
-  sudo yum install firewalld
+  sudo yum install firewalld -y
+  sudo systemctl enable firewalld
+  sudo systemctl start firewalld
   sudo firewall-cmd --permanent --add-service=http
   sudo firewall-cmd --permanent --add-service=https
   sudo firewall-cmd --reload
