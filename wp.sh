@@ -44,6 +44,7 @@ install_mysql () {
 install_php () {
   echo "Install and Start PHP"
   cd $HOME
+  sudo yum install wget -y
   sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
   sudo yum install epel-release-latest-7.noarch.rpm -y 
   sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
@@ -68,8 +69,8 @@ set_up_sql_user () {
 install_wordpress () {
   echo "Install WordPress"
   cd $HOME
-  sudo yum install wget -y
-  sudo yum install php-gd -y
+  # sudo yum install wget -y
+  # sudo yum install php-gd -y
   sudo systemctl restart httpd
   wget http://wordpress.org/latest.tar.gz
   tar -xzf latest.tar.gz
