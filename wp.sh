@@ -45,11 +45,12 @@ install_php () {
   echo "Install and Start PHP"
   cd $HOME
   sudo yum install wget -y
+  sudo yum install yum-utils
   sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
   sudo yum install epel-release-latest-7.noarch.rpm -y 
   sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
   sudo yum-config-manager --enable remi-php73 -y
-  sudo yum install php php-gd php-mysql -y
+  sudo yum install php php-gd php-mysqlnd -y
   sudo systemctl restart httpd.service
   echo "Finished"
 }
