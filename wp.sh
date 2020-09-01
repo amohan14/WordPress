@@ -49,7 +49,7 @@ install_php () {
   sudo yum install epel-release-latest-7.noarch.rpm -y 
   sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
   sudo yum-config-manager --enable remi-php73 -y
-  sudo yum install php php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd -y
+  sudo yum install php php-gd php-mysqlnd -y
   sudo systemctl restart httpd.service
   echo "Finished"
 }
