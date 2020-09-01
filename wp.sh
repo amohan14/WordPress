@@ -86,7 +86,6 @@ install_wordpress () {
 
 # Runs the Individual Scripts
 echo "Starting Script to set up WordPress"
-sudo yum update -y
 install_apache
 install_mysql
 install_php
