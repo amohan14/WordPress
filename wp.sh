@@ -45,7 +45,7 @@ install_php () {
   echo "Install and Start PHP"
   cd $HOME
   sudo yum install wget -y
-  sudo yum install yum-utils
+  sudo yum install yum-utils -y
   sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
   sudo yum install epel-release-latest-7.noarch.rpm -y 
   sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
