@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-
+# WordPress 5.2 onwards require PHP version 5.6 or more.Since php 5.6 or more is not available in yum yet, we are going for WordPress 5.1. 
 # Name of the WordPress tarball
-# tarball="wordpress-5.1.1.tar.gz"
+tar="wordpress-5.1.1.tar.gz"
 
 # Checks to see if User passed a variable from the command line
 # If they did not, sets the default password to Drawsap
@@ -74,8 +74,9 @@ install_wordpress () {
   sudo yum install wget -y
   sudo yum install php-gd -y
   sudo systemctl restart httpd
+  wget https://wordpress.org/$tar
   # wget http://wordpress.org/latest.tar.gz
-  tar -xzf wordpress-5.1.1.tar.gz
+  tar -xzf $tar
   sudo rsync -avP ~/wordpress/ /var/www/html/
   mkdir /var/www/html/wp-content/uploads
   sudo chown -R apache:apache /var/www/html/*
