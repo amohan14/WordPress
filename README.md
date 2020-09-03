@@ -79,8 +79,8 @@
 WordPress 5.2 onwards(or latest) require PHP version 5.6 or more. Since php 5.6 or more is not available in yum yet, we are going for installing WordPress 5.1 which is compatible with php 5.4 in yum.
 
 	$ wget http://wordpress.org/wordpress-5.1.1.tar.gz
-        # Unzip the tar file
-        $ tar -xzvf wordpress-5.1.1.tar.gz
+  	# Unzip the tar file
+	$ tar -xzvf wordpress-5.1.1.tar.gz
 	
           
    This should create a file named WordPress in the home directory. Now, move that file and its contents to our public_html folder, so that it can serve up the content for our website. We want to keep the same file permission, so we use the following rsync command. 
@@ -99,12 +99,12 @@ WordPress 5.2 onwards(or latest) require PHP version 5.6 or more. Since php 5.6 
    
    Go to /var/www/html and create a wp-config.php file by copying the sample file WordPress has provided.
    
-   	$ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
+   		$ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
         
    Now, edit the new wp-config.php file with the correct database information
    
-   	$ sed -i s/database_name_here/db_name/ /var/www/html/wp-config.php
-  		$ sed -i s/username_here/db_user/ /var/www/html/wp-config.php
+   		$ sed -i s/database_name_here/db_name/ /var/www/html/wp-config.php
+		$ sed -i s/username_here/db_user/ /var/www/html/wp-config.php
   		$ sed -i s/password_here/db_user_password/ /var/www/html/wp-config.php
         
 	Replace db_name,db_user and db_user_password with your database name, database user and desired password
