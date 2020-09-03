@@ -79,8 +79,8 @@
 WordPress 5.2 onwards(or latest) require PHP version 5.6 or more. Since php 5.6 or more is not available in yum yet, we are going for installing WordPress 5.1 which is compatible with php 5.4 in yum.
 
 		$ wget http://wordpress.org/wordpress-5.1.1.tar.gz
-  		# Unzip the tar file
-		$ tar -xzvf wordpress-5.1.1.tar.gz
+  			# Unzip the tar file
+			$ tar -xzvf wordpress-5.1.1.tar.gz
 	
           
    This should create a file named WordPress in the home directory. Now, move that file and its contents to our public_html folder, so that it can serve up the content for our website. We want to keep the same file permission, so we use the following rsync command. 
